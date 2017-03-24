@@ -6,6 +6,20 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
+## BLOG DEMO  
+
+[watch](https://www.youtube.com/watch?v=256goqEqxt0)  
+
+## Installation guide  
+
+* clone directory
+* cd laravel-blog
+* composer install
+* touch .env
+* cp .env.example .env 
+* setup .env
+* php artisan migrate
+* php artisan serve
 
 ## About Laravel
 
