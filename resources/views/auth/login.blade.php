@@ -44,7 +44,11 @@
                                     <label>
                                         <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
                                     </label>
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        Forgot Your Password?
+                                    </a>
                                 </div>
+
                             </div>
                         </div>
 
@@ -54,9 +58,9 @@
                                     Login
                                 </button>
 
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Forgot Your Password?
-                                </a>
+                                <button type="submit" class="btn btn-primary">
+                                    Facebook Login
+                                </button>
                             </div>
                         </div>
                     </form>
