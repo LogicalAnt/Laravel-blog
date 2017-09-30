@@ -10,6 +10,7 @@
         "graham-campbell/markdown": "^7.1",
         "iatstuti/laravel-cascade-soft-deletes": "1.0.*",
         "laravel/framework": "5.4.*",
+        "laravel/socialite": "^3.0",
         "laravel/tinker": "~1.0",
         "nesbot/carbon": "^1.22",
         "twbs/bootstrap": "4.0.0-alpha.6"

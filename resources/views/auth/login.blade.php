@@ -57,10 +57,9 @@
                                 <button type="submit" class="btn btn-primary">
                                     Login
                                 </button>
-
-                                <button type="submit" class="btn btn-primary">
-                                    Facebook Login
-                                </button>
+                                <a href="login/facebook">
+                                    <input type="button" class="btn btn-primary" value="Facebook login">
+                                </a>
                             </div>
                         </div>
                     </form>

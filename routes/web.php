@@ -27,25 +27,8 @@ Route::patch('/post/{id}', 'PostController@patch');
 Route::get('/post/delete/{id}', 'PostController@delete');
 Route::get('/topic/{tag}', 'TagController@showPost');
 Route::get('/archive', 'HomeController@show');
-
-
-
-
-
-
-
-
-Route::get('/testing', function(){
-    return \App\Tag::topTag();
-    return view('others.test_page');
-});
-Route::post('/testing', function(){
-    foreach(request('tag') as $tags)
-    {
-       return $tags;
-    }
-});
-
+Route::get('login/facebook', 'Auth\LoginController@redirectToProvider');
+Route::get('login/facebook/callback', 'Auth\LoginController@handleProviderCallback');
 
 Route::get('help', function(){
     return view('others.help');
