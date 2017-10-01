@@ -39,7 +39,7 @@ class PostController extends Controller
 
         /*save post*/
 
-
+        if(request('tag'))
         foreach(request('tag') as $tag)
         {
             /*

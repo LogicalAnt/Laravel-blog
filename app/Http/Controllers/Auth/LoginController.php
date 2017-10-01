@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Support\Facades\Auth;
+
 use Laravel\Socialite\Facades\Socialite;
 
 
@@ -58,24 +59,25 @@ class LoginController extends Controller
     public function handleProviderCallback()
     {
 
-        $user = Socialite::driver('facebook')->user();
+        $socialiteUser = Socialite::driver('facebook')->stateless()->user();
 
         /**
-         * if user exit then login
+         * if user exist then login
          * else register the authorized user and login
          */
-        if(Auth::attempt(['email' =>$user->getEmail() , 'provider_id'=>$user->getId()]))
+        $user=User::where(['email' => $socialiteUser->getEmail(), 'provider_id' =>$socialiteUser->getId()])->first();
+        if($user !== null)
         {
-            Auth::login(User::where('provider_id', $user->getId()));
+            Auth::loginUsingId($user->id);
             return redirect('home');
         }
 
         else{
-            $newUser= new \App\User;
-            $newUser->name= $user->getName();
-            $newUser->provider_id= $user->getId();
-            $newUser->email= $user->getEmail();
-            $newUser->avatar= $user->getAvatar();
+            $newUser= new User;
+            $newUser->name= $socialiteUser->getName();
+            $newUser->provider_id= $socialiteUser->getId();
+            $newUser->email= $socialiteUser->getEmail();
+            $newUser->avatar= $socialiteUser->getAvatar();
             $newUser->save();
             Auth::login($newUser);
             return redirect('home');
