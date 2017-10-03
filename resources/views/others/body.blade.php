@@ -13,14 +13,14 @@
     <div class="row">
         <div class="col-sm-8 blog-main">
 <!-- modal triggerer-->
-            <div class="panel panel-default">
+            <div class="panel panel-default"  data-toggle="modal" data-target="#exampleModalLong">
                 <div class="panel-heading">
                     <h4 class="panel-title">Post Something</h4>
                 </div>
   
                 <div class="panel-body">
-                  <p data-toggle="modal" data-target="#exampleModalLong">Write here . . .</p>
-                  <p class=" btn btn-primary" data-toggle="modal" data-target="#exampleModalLong"style="float:right">post</p>
+                  <p>Write here . . .</p>
+                  <p class=" btn btn-primary" style="float:right">post</p>
                 </div>
             </div>
 <!-- modal triggerer-->
