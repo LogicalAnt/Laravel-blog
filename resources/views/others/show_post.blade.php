@@ -44,7 +44,7 @@
                     <hr style="border-width: 5px;">
                 </div><!-- /.blog-post -->
 
-                <div class="blog-post">
+{{--                <div class="blog-post">
                 <form action="/post/{{$post->id}}/comments" method="post">
                     {{csrf_field()}}
 
@@ -53,11 +53,11 @@
                         <button class="btn btn-primary btn-sm" style="float:right;">comment</button>
                     </div>
                 </form>
-                </div> {{--colllect comment--}}
+                </div> --}}{{--colllect comment--}}{{--
 
                 <div class="blog-post">
                     @foreach($comments as $comment)
-                    {{--issue: Is sortByDesc perform every loop iteration?--}}
+                    --}}{{--issue: Is sortByDesc perform every loop iteration?--}}{{--
                         <p> <a href="/user/{{$comment->user->id}}">{{$comment->user->name}}</a>
                         {{
                            $comment->created_at
@@ -67,8 +67,8 @@
                     <p>{{$comment->body}}</p>
                     <hr>
                     @endforeach
-                </div> {{--fetch comment--}}
-
+                </div> --}}{{--fetch comment--}}
+                    <div class="fb-comments" data-href="https://localhost:8000/laravel-blog" data-numposts="5"></div>
             </div><!-- /.blog-main -->
 
             @include('others.sidebar');
